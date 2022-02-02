@@ -18,6 +18,13 @@
  .tweet > header {
   display:flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.tweet > header > span {
+  display: flex;
+  align-items: center;
+  gap : 5px;
 }
 
 .tweet > header > .username {
