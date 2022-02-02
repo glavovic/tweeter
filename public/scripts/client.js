@@ -3,21 +3,22 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-const dataURL = "http://localhost:8080/tweets"
+ const dataURL = "http://localhost:8080/tweets"
 
 
-  const appendTweet = (tweet) =>{
-    const layout = `
+  const createTweetElement = (tweet) =>{
+    const { user, content, created_at } = tweet
+    const tweetElement = `
     <article class="tweet">
       <header>
-        <span><img src="${tweet.user.avatars}">${tweet.user.name}</span>
+        <span><img src="${user.avatars}">${user.name}</span>
         <div class ="username">
-          <span>${tweet.user.handle}</span>
+          <span>${user.handle}</span>
         </div>
       </header>
-      <p>${tweet.content.text}</p>
+      <p>${content.text}</p>
       <footer>
-        ${tweet.created_at}
+        ${timeago.format(created_at)}
         <div class="icons">
           <i class="fas fa-flag"></i>
           <i class="fas fa-retweet"></i>
@@ -26,18 +27,21 @@ const dataURL = "http://localhost:8080/tweets"
       </footer>
     </article>
    `;
-   $('.all-tweets').append(layout)
+    return tweetElement
   }
 
+ 
 
-  const appendMultipleTweets = (tweetArr) => {
+
+  const renderTweets = (tweetArr) => {
     for (let tweet of tweetArr) {
-      appendTweet(tweet);
+      const tweetElement = createTweetElement(tweet)
+      $('.all-tweets').prepend(tweetElement)
     }
   }
 
   
   // trying to get data out of /tweets
   $.get(dataURL).then((data) => {
-    appendMultipleTweets(data);
+    renderTweets(data);
   })
