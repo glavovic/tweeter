@@ -13,12 +13,20 @@
 }
   .tweet:hover {
     box-shadow: 5px 10px;
-  }
+}
 
  .tweet > header {
   display:flex;
-
   justify-content: space-between;
+}
+
+.tweet > header > .username {
+  font-weight: 900;
+  color:grey
+}
+
+.tweet > p {
+  font-weight: 600;
 }
 
 .tweet > footer {
@@ -37,6 +45,7 @@ footer > .icons {
 .icons > i {
   color: #3D59FF;
   font-size: x-large;
+  margin-right: 8px;
 }
  .icons > i:hover {
   color: #FFB545;

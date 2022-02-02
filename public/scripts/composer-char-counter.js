@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // --- our code goes here ---
-  $('textarea').on("input", (function () {
+  $('textarea').on("input", (function() {
     const currentLenght = $(this).val().length;
     const charCounter = 140 - currentLenght;
     const limit = $('.counter').html(charCounter);
@@ -9,6 +9,6 @@ $(document).ready(function() {
       limit.css({"color" : "red"});
     } else {
       limit.css({"color" : "#545149"});
-    };
+    }
   }));
 });
