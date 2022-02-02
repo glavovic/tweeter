@@ -1,0 +1,43 @@
+.all-tweets {
+  display: flex;
+  flex-direction: column;
+}
+.tweet {
+  display: flex;
+  flex-direction: column;
+  border : 3px solid grey;
+  width : 90%;
+  margin-top: 13px;
+  padding: 15px
+  
+}
+  .tweet:hover {
+    box-shadow: 5px 10px;
+  }
+
+ .tweet > header {
+  display:flex;
+
+  justify-content: space-between;
+}
+
+.tweet > footer {
+  display: flex;
+  align-items: center;
+  border-top: 3px solid grey;
+  justify-content: space-between;
+  font-size: small;
+  padding: 3px
+}
+
+footer > .icons {
+  display: flex;
+}
+
+.icons > i {
+  color: #3D59FF;
+  font-size: x-large;
+}
+ .icons > i:hover {
+  color: #FFB545;
+ }
