@@ -23,13 +23,11 @@ body {
 
 main {
   width: 90%;
-  margin: auto;
   display:flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   background-color: #f4f1ec;
 }
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

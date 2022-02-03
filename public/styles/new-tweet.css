@@ -28,16 +28,21 @@ textarea {
 }
 
 textarea {
-  width: 90%;
+  width: 100%;
 }
 
 form {
   width: 100%;
 }
-
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 .container {
   display: flex;
   align-items: stretch;
+  margin: auto;
 }
 
 ::placeholder {
@@ -45,3 +50,17 @@ form {
   font-weight: bold;
 }
 
+ .errorMsg {
+  color:red;
+  border:5px solid red;
+  padding: 1em;
+  align-items: center;
+  margin-top: 1em;
+  display: none
+}
+
+.errorMsg > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

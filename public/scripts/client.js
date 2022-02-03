@@ -51,11 +51,17 @@ $(() => {
     event.preventDefault();
 
     if($("#tweet-text").val().length > 140) {
-      return alert("get the frig out of here to many chars")
+      $(".errorMsg").html(`<span> 🚫⚠️🙅🏻‍♂️ Please use less then the 140 characthers :/ 🙅🏻‍♂️⚠🚫 </span`);
+      $('.errorMsg').slideDown("slow");
+      return;
+      // return alert("get the frig out of here to many chars")
     }
 
     if(!$("#tweet-text").val()) {
-      return alert("learn to type you imbredacile")
+      $(".errorMsg").html(`<span> 🚫⚠️🙅🏻‍♂️ How about typing something in before tweeting 🙅🏻‍♂️⚠️🚫 </span>`);
+      $('.errorMsg').slideDown("slow");
+      return;
+      // return alert("learn to type you imbredacile")
     }
     // yeah man i was desperate so i render the last item the the dataURL it works w/e 
     // sue me
