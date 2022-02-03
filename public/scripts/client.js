@@ -44,14 +44,29 @@ $(() => {
 
   // trying to get data out of /tweets
   $.get(dataURL, function(data) {
-    $( ".tweetIt" ).submit(function( event ) {
-      event.preventDefault();
-      $.post("/tweets", $(this).serialize())
-    }); 
     renderTweets(data);
   })
 
+  $( ".tweetIt" ).submit(function( event ) {
+    event.preventDefault();
 
+    if($("#tweet-text").val().length > 140) {
+      return alert("get the frig out of here to many chars")
+    }
+
+    if(!$("#tweet-text").val()) {
+      return alert("learn to type you imbredacile")
+    }
+    // yeah man i was desperate so i render the last item the the dataURL it works w/e 
+    // sue me
+    $.post("/tweets", $(this).serialize(), function() {
+      $.get(dataURL, function(data) {
+        renderTweets([data[data.length-1]]);
+      });
+    });
+    
+    
+  }); 
 
 })
 
