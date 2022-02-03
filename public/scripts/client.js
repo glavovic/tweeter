@@ -40,8 +40,18 @@
     }
   }
 
-  
+$(() => {
+
   // trying to get data out of /tweets
-  $.get(dataURL).then((data) => {
+  $.get(dataURL, function(data) {
+    $( ".tweetIt" ).submit(function( event ) {
+      event.preventDefault();
+      $.post("/tweets", $(this).serialize())
+    }); 
     renderTweets(data);
   })
+
+
+
+})
+
