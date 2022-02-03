@@ -1,3 +1,5 @@
+/* css sheet for all the tweets */
+
 .all-tweets {
   display: flex;
   flex-direction: column;

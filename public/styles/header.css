@@ -1,3 +1,4 @@
+/* css sheet for the header */
 
 body > header {
   display: flex;
@@ -27,8 +28,6 @@ body > header {
     margin: 1em;
     margin-left : 2em;
   }
- 
-  
 }
 
 
