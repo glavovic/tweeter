@@ -3,12 +3,13 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
- const dataURL = "http://localhost:8080/tweets"
+// fake database of tweets aka obj
+const dataURL = "http://localhost:8080/tweets";
 
-
-  const createTweetElement = (tweet) =>{
-    const { user, content, created_at } = tweet
-    const tweetElement = `
+// creates single tweet html
+const createTweetElement = (tweet) =>{
+  const { user, content, created_at } = tweet;
+  const tweetElement = `
     <article class="tweet">
       <header>
         <span><img src="${user.avatars}">${user.name}</span>
@@ -27,52 +28,53 @@
       </footer>
     </article>
    `;
-    return tweetElement
-  }
+  return tweetElement;
+};
 
  
 
-
-  const renderTweets = (tweetArr) => {
-    for (let tweet of tweetArr) {
-      const tweetElement = createTweetElement(tweet)
-      $('.all-tweets').prepend(tweetElement)
-    }
+// renders all ze tweets
+const renderTweets = (tweetArr) => {
+  for (let tweet of tweetArr) {
+    const tweetElement = createTweetElement(tweet);
+    $('.all-tweets').prepend(tweetElement);
   }
+};
 
 $(() => {
 
   // trying to get data out of /tweets
   $.get(dataURL, function(data) {
     renderTweets(data);
-  })
-
-  $( ".tweetIt" ).submit(function( event ) {
+  });
+// stops tweet event checks for errors and posts it to database aka object 
+  $(".tweetIt").submit(function(event) {
     event.preventDefault();
 
-    if($("#tweet-text").val().length > 140) {
+    if ($("#tweet-text").val().length > 140) {
       $(".errorMsg").html(`<span> 🚫⚠️🙅🏻‍♂️ Please use less then the 140 characthers :/ 🙅🏻‍♂️⚠🚫 </span`);
       $('.errorMsg').slideDown("slow");
       return;
       // return alert("get the frig out of here to many chars")
     }
 
-    if(!$("#tweet-text").val()) {
+    if (!$("#tweet-text").val().trim()) {
       $(".errorMsg").html(`<span> 🚫⚠️🙅🏻‍♂️ How about typing something in before tweeting 🙅🏻‍♂️⚠️🚫 </span>`);
       $('.errorMsg').slideDown("slow");
       return;
       // return alert("learn to type you imbredacile")
     }
-    // yeah man i was desperate so i render the last item the the dataURL it works w/e 
-    // sue me
+
+    //takes dataurl as data and turns it into an array and returns the last tweet 
+    // posts last tweet 
     $.post("/tweets", $(this).serialize(), function() {
       $.get(dataURL, function(data) {
-        renderTweets([data[data.length-1]]);
+        renderTweets([data[data.length - 1]]);
       });
     });
     
     
-  }); 
+  });
 
-})
+});
 

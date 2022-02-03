@@ -16,6 +16,12 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/all-tweets.css" type="text/css" />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
+    <!-- App JS scripts-->
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -33,47 +39,43 @@
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
-
+<!--header bar aka profile pic and name-->
     <header class="bigBox">
       <div class="userId">
-          <img src="/images/profile-hex.png"> 
+        <img src="/images/profile-hex.png"> 
       </div>
       <div class="userId">
-          <h2><strong>Amy</strong> Mansell</h2>
+        <h2><strong>Amy</strong> Mansell</h2>
       </div>
     </header>
 
     <!-- Page-specific (main) content here -->
 
-      <main class="container" id="container">
-
-        <section class="new-tweet">
-
-          <alert class="errorMsg">
-          </alert>
-          <h2>Compose Tweet</h2>
-          <form class="tweetIt" method="POST" action="/tweets">
-  
-            <div class="topField">
-              <!-- <label for="tweet-text">What are you humming about?</label> -->
-              <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
-            </div>
-  
-            <div class="bottomField">
-              <button type="submit" class="buttonMod">Tweet</button>
-              <output name="counter" class="counter" for="tweet-text">140</output>
-            </div>
-  
-          </form>
-        </section>
-        <section class="all-tweets" > 
-        </section>
-      </main>
+    <main class="container" id="container">
+      <!-- tweet form -->
+      <section class="new-tweet">
+        <!-- error messages-->
+        <alert class="errorMsg"></alert>
+          <!-- tweet form and button -->
+        <h2>Compose Tweet</h2>
+        <form class="tweetIt" method="POST" action="/tweets">
+          <div class="topField">
+            <!-- <label for="tweet-text">What are you humming about?</label> -->
+            <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
+          </div>
+          <div class="bottomField">
+            <button type="submit" class="buttonMod">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+         </section>
+        <!-- Made Tweets -->
+       <section class="all-tweets" > 
+      </section>
+    </main>
 
   </body>
-      <!-- App JS -->
-      <script type="text/javascript" src="/scripts/client.js"></script>
-      <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
 </html>
 
 

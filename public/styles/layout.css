@@ -14,11 +14,14 @@ html {
  * Global layout stuff
  */
 
-body {
+/* css sheet for the header */
+ body {
   font-family: 'Source Sans Pro', sans-serif;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
@@ -32,3 +35,20 @@ main {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+/* for desktop screen */
+ @media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5em;
+    justify-content: space-evenly;
+  }
+
+  main {
+    width: 50%;
+    display: flex;
+  }
+
+ 
+
+}

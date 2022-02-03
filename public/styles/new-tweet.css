@@ -10,7 +10,6 @@
   justify-content: space-between;
   font-family: 'Bungee', cursive;
   padding-top: 0.5em;
-  width: 90%;
 }
 textarea {
   background: transparent;
@@ -26,7 +25,9 @@ textarea {
   color:white;
   border : none;
 }
-
+p {
+  word-wrap: break-word;
+}
 textarea {
   width: 100%;
 }
