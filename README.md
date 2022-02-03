@@ -3,10 +3,10 @@
 Tweeter is a simple, single-page Twitter clone.
 built to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
 
-!["Desktop View"](#)
+!["Desktop View"](https://github.com/glavovic/tweeter/blob/master/Images/desktopView.png)
 
 
-!["Mobile View"](#)
+!["Mobile View"](https://github.com/glavovic/tweeter/blob/master/Images/mobileView.png)
 
 
 ## Getting Started
